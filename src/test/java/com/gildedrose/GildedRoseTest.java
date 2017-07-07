@@ -7,11 +7,24 @@ import static org.junit.Assert.assertEquals;
 public class GildedRoseTest {
 
     @Test
-    public void foo() {
+    public void shouldDenoteNameOfItem() {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         GildedRose app = new GildedRose(items);
-        app.updateQuality();
         assertEquals("foo", app.items[0].name);
+    }
+
+    @Test
+    public void shouldDenoteNumberOfDaysToSellItem(){
+        Item[] items = new Item[] {new Item("Apples", 2,0)};
+        GildedRose app = new GildedRose(items);
+        assertEquals(2, app.items[0].sellIn);
+    }
+
+    @Test
+    public void shouldDenoteQualityOfItem(){
+        Item[] items = new Item[] {new Item("Apples",2,0)};
+        GildedRose app = new GildedRose(items);
+        assertEquals(0,app.items[0].quality);
     }
 
 }
