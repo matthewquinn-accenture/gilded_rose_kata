@@ -41,5 +41,13 @@ public class GildedRoseTest {
         app.updateQuality();
         assertEquals(0, app.items[0].quality);
     }
-
+    @Test
+    public void shouldNotHaveNegativeQualityWhenQualityReachesItsLimit(){
+        Item[] items = new Item[] {new Item("Apples",4,0)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        app.updateQuality();
+        app.updateQuality();
+        assertEquals(0,app.items[0].quality);
+    }
 }
