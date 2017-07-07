@@ -27,4 +27,11 @@ public class GildedRoseTest {
         assertEquals(0,app.items[0].quality);
     }
 
+    @Test
+    public void shouldDenoteNameOfSecondItemInList(){
+        Item[] items = new Item[] {new Item("Apples",0,0), new Item("foo",0,0)};
+        GildedRose app = new GildedRose(items);
+        assertEquals("foo", app.items[1].name);
+    }
+
 }
