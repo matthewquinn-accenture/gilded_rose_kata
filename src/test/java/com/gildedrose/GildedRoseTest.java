@@ -34,4 +34,12 @@ public class GildedRoseTest {
         assertEquals("foo", app.items[1].name);
     }
 
+    @Test
+    public void shouldDecreaseQualityTwiceAsFastWhenSellnIsNegative(){
+        Item[] items = new Item[]{new Item("Apple",0,2)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, app.items[0].quality);
+    }
+
 }
